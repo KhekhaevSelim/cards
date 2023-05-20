@@ -1,8 +1,7 @@
 import React from "react";
-import { useAppDispatch, useAppSelector } from "../../../app/hooks";
 import { authThunks } from "../auth.slice";
 import CommonHeader from "../../../common/components/commonHeader/CommonHeader";
-import style from "./Login.module.css"
+import style from "./Login.module.css";
 import CommonButton, { CommonButtonPropsType } from "../../../common/components/commonButton/CommonButton";
 import {
   Checkbox,
@@ -16,7 +15,10 @@ import {
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 import { Navigate, NavLink } from "react-router-dom";
 import { useFormik } from "formik";
-import { LoginRequestType, RegisterRequestType } from "../auth.api";
+import { LoginRequestType } from "../auth.api";
+import { useAppDispatch, useAppSelector } from "../../../common/hooks";
+import { toast } from "react-toastify";
+
 const Login = () => {
   const profile = useAppSelector(state => state.auth.profile)
   const dispatch = useAppDispatch();
@@ -54,6 +56,7 @@ const Login = () => {
   const handleMouseDownPassword = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
   };
+
   const formik = useFormik({
     initialValues: {
       email: "",
@@ -61,7 +64,10 @@ const Login = () => {
       rememberMe : false
     },
     onSubmit: (values: LoginRequestType)  => {
-      dispatch(authThunks.login(values))
+      dispatch(authThunks.login(values)).then((res)=> {
+        if(!res.payload?.error)
+        toast.success("Вы успешно залогинились")
+      })
       formik.resetForm()
     }
   });

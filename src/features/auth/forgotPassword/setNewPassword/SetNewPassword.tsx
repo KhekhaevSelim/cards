@@ -1,14 +1,13 @@
-import React, { useEffect, useState } from "react";
-import { useAppDispatch } from "../../../../app/hooks";
+import React, { useState } from "react";
 import CommonButton, { CommonButtonPropsType } from "../../../../common/components/commonButton/CommonButton";
 import { useFormik } from "formik";
-import { ForgotPasswordRequestType } from "../../auth.api";
 import { authThunks } from "../../auth.slice";
-import { Navigate, NavLink, useParams } from "react-router-dom";
+import { Navigate, useParams } from "react-router-dom";
 import style from "./SetNewPassword.module.css";
 import CommonHeader from "../../../../common/components/commonHeader/CommonHeader";
 import { FormControl, IconButton, InputAdornment, InputLabel, OutlinedInput } from "@mui/material";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
+import { useAppDispatch } from "../../../../common/hooks";
 
 const SetNewPassword = () => {
   const dispatch = useAppDispatch()

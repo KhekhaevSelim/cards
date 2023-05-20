@@ -5,10 +5,9 @@ import CommonButton, { CommonButtonPropsType } from "../../../common/components/
 import { Navigate, NavLink } from "react-router-dom";
 import { FormControl, InputLabel, OutlinedInput } from "@mui/material";
 import { useFormik } from "formik";
-import { useAppDispatch } from "../../../app/hooks";
 import { authThunks } from "../auth.slice";
 import { ForgotPasswordRequestType } from "../auth.api";
-import { useSelector } from "react-redux";
+import { useAppDispatch } from "../../../common/hooks";
 
 const ForgotPassword = () => {
   const dispatch = useAppDispatch()

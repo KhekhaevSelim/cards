@@ -1,4 +1,3 @@
-import { useAppDispatch, useAppSelector } from "app/hooks";
 import CommonHeader from "common/components/commonHeader/CommonHeader";
 import React, { useEffect } from "react";
 import style from "./Profile.module.css";
@@ -7,7 +6,11 @@ import EditableSpan from "../../../common/components/editableSpan/EditableSpan";
 import LogButton, { LogButtonPropsType } from "../../../common/components/logButton/LogButton";
 import { authThunks } from "../auth.slice";
 import { EditProfileRequestType } from "../auth.api";
-import { Navigate } from "react-router-dom";
+import { Navigate, NavLink } from "react-router-dom";
+import { useAppDispatch } from "../../../common/hooks";
+import { useAppSelector } from "../../../common/hooks";
+import { toast } from "react-toastify";
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 const Profile = () => {
 
@@ -47,14 +50,20 @@ const Profile = () => {
     dispatch(authThunks.editProfile(newProfileData))
   }
   const logOut = () => {
-    dispatch(authThunks.logOut())
+    dispatch(authThunks.logOut()).then((res)=> {
+      toast.success("Вы успешно разлогинились")
+    })
   }
+
  if(!isInitialized){
    return <Navigate to={"/login"}/>
  }
   return (
     <div className={style.container}>
       <CommonHeader isInside={true} img={""} userName={profile?.email}/>
+      <NavLink to={"/packsList"} className={style.backToPacksContainer}>
+        <ArrowBackIcon/> Back to Packs List
+      </NavLink>
       <div className={style.profileContainer}>
          <div className={style.profile}>
           <p className={style.title}>Personal information</p>

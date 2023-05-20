@@ -1,6 +1,6 @@
 import React from "react";
 import LogoutIcon from "@mui/icons-material/Logout";
-import style from "./LogButton.module.css"
+import style from "./LogButton.module.css";
 
 export type LogButtonPropsType = {
   style : {

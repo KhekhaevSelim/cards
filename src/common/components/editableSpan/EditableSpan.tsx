@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { Button, FormControl, IconButton, InputAdornment, InputLabel, OutlinedInput } from "@mui/material";
+import { Button, FormControl, InputAdornment, InputLabel, OutlinedInput } from "@mui/material";
 import ModeIcon from "@mui/icons-material/Mode";
-import style from "./EditableSpan.module.css"
+import style from "./EditableSpan.module.css";
 import { EditProfileRequestType } from "../../../features/auth/auth.api";
 
 type EditableSpanPropsType = {

@@ -1,0 +1,90 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.packsListContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+
+.tableHead {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    font-size: 20px;
+    width: 80vw;
+    margin-bottom: 30px;
+}
+.settings {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80vw;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+.search{
+    display: flex;
+    gap : 10px;
+    flex-direction: column;
+}
+.searchLine{
+    width: 150%;
+}
+.sortByWho{
+    display: flex;
+    gap : 10px;
+    flex-direction: column;
+}
+.sortByWhoBtn{
+    width: 90px;
+}
+.sortByCardNums{
+    display: flex;
+    gap : 10px;
+    flex-direction: column;
+}
+.materialComponents{
+    display: flex;
+    gap : 10px;
+    justify-content: center;
+    align-items: center;
+}
+.filterOff{
+    cursor: pointer;
+}
+.tableContainer{
+    width: 80vw;
+    border-collapse:collapse;
+}
+table {
+    background: white ;
+    border: none;
+    box-shadow: 0px 0px 5px 2px rgba(34, 60, 80, 0.2);
+
+}
+th {
+    background: darkgrey;
+    border: darkgrey;
+}
+tr{
+    height: 40px;
+    border-bottom: darkgrey;
+}
+.paginationContainer{
+    margin-top: 20px;
+    width: 80vw;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+.paginationContainer input{
+    width: 40px;
+}

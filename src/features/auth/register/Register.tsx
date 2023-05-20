@@ -1,4 +1,3 @@
-import { useAppDispatch, useAppSelector } from "app/hooks";
 import React from "react";
 import { authThunks } from "../auth.slice";
 import style from "./Register.module.css";
@@ -9,6 +8,8 @@ import { FormControl, IconButton, InputAdornment, InputLabel, OutlinedInput } fr
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 import { Navigate, NavLink } from "react-router-dom";
 import { RegisterRequestType } from "../auth.api";
+import { useAppDispatch } from "../../../common/hooks";
+import { useAppSelector } from "../../../common/hooks";
 
 
 const Register = () => {

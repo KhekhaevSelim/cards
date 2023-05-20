@@ -1,15 +1,10 @@
-/*.App {*/
-/*  position: absolute;*/
-/*  border: solid red;*/
-/*  left : 50%;*/
-/*  top : 50%;*/
-
-/*}*/
-
-/*.loading{*/
-/*  border: solid blue;*/
-/*  position: relative;*/
-/*  margin: 0 auto;*/
-/*  width: 300px;*/
-/*  height: 300px;*/
-/*}*/
+.App{
+    position: relative;
+}
+.loading{
+    position: absolute !important;
+   top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 99 !important;
+}

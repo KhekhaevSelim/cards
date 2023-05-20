@@ -1,7 +1,8 @@
 import React from "react";
 import CommonButton, { CommonButtonPropsType } from "../commonButton/CommonButton";
-import style from "./CommonHeader.module.css"
-import avatar from "../../assets/avatar.jpg"
+import style from "./CommonHeader.module.css";
+import avatar from "../../assets/avatar.jpg";
+
 type CommonHeaderPropsType = {
   userName?: string
   img?: string

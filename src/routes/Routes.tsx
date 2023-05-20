@@ -8,9 +8,9 @@ import Register from "../features/auth/register/Register";
 import SetNewPassword from "../features/auth/forgotPassword/setNewPassword/SetNewPassword";
 import Profile from "features/auth/profile/Profile";
 import Cards from "features/cards/Cards";
-import Learn from "../features/packs/Learn";
 import ForgotPassword from "../features/auth/forgotPassword/ForgotPassword";
 import CheckEmail from "features/auth/forgotPassword/checkEmail/CheckEmail";
+import PacksList from "../features/packs/packsList/PacksList";
 
 export const router = createBrowserRouter([
   {
@@ -18,7 +18,7 @@ export const router = createBrowserRouter([
     element: <App />,
     children : [
       {
-        path: "login",
+        path: "/login",
         element: <Login />
       },
       {
@@ -42,12 +42,12 @@ export const router = createBrowserRouter([
         element: <Profile />
       },
       {
-        path: "cards",
-        element: <Cards />
+        path: "packsList",
+        element: <PacksList />
       },
       {
-        path: "learn",
-        element: <Learn />
+        path: "cards",
+        element: <Cards />
       }
     ]
   }
